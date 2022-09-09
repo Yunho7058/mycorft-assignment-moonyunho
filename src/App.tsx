@@ -1,5 +1,13 @@
+import Router from './Router'
+import GlobalStyle from './components/Global/GlobalStyle'
+
 function App() {
-  return <div>하이</div>;
+  return (
+    <>
+      <GlobalStyle />
+      <Router />
+    </>
+  )
 }
 
-export default App;
+export default App
