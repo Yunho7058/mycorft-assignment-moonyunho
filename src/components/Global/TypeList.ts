@@ -3,8 +3,9 @@ namespace TypeList {
     isLogin: boolean
     token: string
   }
-  export interface LoginSlice extends LoginState {
-    status: string
+  export interface Effectiveness {
+    email: string | boolean
+    password: string | boolean
   }
 }
 export default TypeList

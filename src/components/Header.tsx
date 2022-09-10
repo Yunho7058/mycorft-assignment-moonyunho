@@ -1,5 +1,8 @@
+import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
+import { setLogout } from '../redux/slice/login'
+import { RootState } from '../redux/store'
 
 const Back = styled.header`
   position: fixed;
@@ -26,13 +29,23 @@ const NavBox = styled.nav`
     cursor: pointer;
     float: left;
     margin-right: 12px;
+    font-size: 18px;
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 `
 
 const Header = () => {
+  const loginState = useSelector((state: RootState) => state.login)
+  const dispatch = useDispatch()
   const navigate = useNavigate()
   const handlePageMove = (url: string) => {
     navigate(url)
+  }
+  const handleLogout = () => {
+    dispatch(setLogout())
+    navigate('/')
   }
   return (
     <Back>
@@ -43,15 +56,34 @@ const Header = () => {
             onClick={() => {
               handlePageMove('/')
             }}>
-            홈
+            서비스
           </li>
-          <li>회원가입</li>
-          <li
-            onClick={() => {
-              handlePageMove('/login')
-            }}>
-            로그인
-          </li>
+          {loginState.isLogin ? (
+            <>
+              <li
+                onClick={() => {
+                  handlePageMove('/mypage/order')
+                }}>
+                마이페이지
+              </li>
+              <li onClick={handleLogout}>로그아웃</li>
+            </>
+          ) : (
+            <>
+              <li
+                onClick={() => {
+                  handlePageMove('/sign-up')
+                }}>
+                회원가입
+              </li>
+              <li
+                onClick={() => {
+                  handlePageMove('/login')
+                }}>
+                로그인
+              </li>
+            </>
+          )}
         </ul>
       </NavBox>
     </Back>
