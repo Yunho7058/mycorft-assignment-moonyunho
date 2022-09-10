@@ -16,8 +16,8 @@ const Btn = styled.button`
   }
 `
 
-const Button = ({ name }: { name: string }) => {
-  return <Btn>{name}</Btn>
+const Button = ({ name, handle }: { name: string; handle?: () => void }) => {
+  return <Btn onClick={handle}>{name}</Btn>
 }
 
 export default Button
