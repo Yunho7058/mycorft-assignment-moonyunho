@@ -1,5 +1,15 @@
+import Router from './Router'
+import GlobalStyle from './components/Global/GlobalStyle'
+import { Provider } from 'react-redux'
+import store from './redux/store'
+
 function App() {
-  return <div>하이</div>;
+  return (
+    <Provider store={store}>
+      <GlobalStyle />
+      <Router />
+    </Provider>
+  )
 }
 
-export default App;
+export default App
