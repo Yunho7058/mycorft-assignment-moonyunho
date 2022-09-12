@@ -10,7 +10,7 @@ import { itemsAPI } from '../redux/slice/items'
 import { AppDispatch, RootState } from '../redux/store'
 const Box = styled(G.Box)`
   margin-top: 70px;
-  height: 650px;
+  height: 580px;
   padding: 10px;
   row-gap: 10px;
   div {

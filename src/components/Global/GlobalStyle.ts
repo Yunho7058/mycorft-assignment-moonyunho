@@ -7,6 +7,7 @@ const GlobalStyle = createGlobalStyle`
         -ms-overflow-style: none;
         margin:0px;
         background-color: rgb(248,248,250);
+        height:100vh;
     }
     ::-webkit-scrollbar {
         display: none;
@@ -34,8 +35,9 @@ export const Back = styled.main`
 `
 
 export const Box = styled.section`
-  width: 50%;
+  width: 30%;
   max-width: 500px;
+  min-width: 300px;
   height: 500px;
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 15px;
