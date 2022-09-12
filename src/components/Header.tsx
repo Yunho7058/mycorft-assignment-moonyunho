@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
@@ -36,10 +37,11 @@ const NavBox = styled.nav`
   }
 `
 
-const Header = () => {
+const Header = memo(function () {
   const loginState = useSelector((state: RootState) => state.login)
   const dispatch = useDispatch()
   const navigate = useNavigate()
+  console.log('하이')
   const handlePageMove = (url: string) => {
     navigate(url)
   }
@@ -88,6 +90,6 @@ const Header = () => {
       </NavBox>
     </Back>
   )
-}
+})
 
 export default Header

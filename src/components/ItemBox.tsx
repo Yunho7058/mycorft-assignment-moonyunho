@@ -3,8 +3,8 @@ import * as G from '../components/Global/GlobalStyle'
 const Box = styled(G.Box)`
   flex-direction: row;
   justify-content: space-around;
-  height: 50px;
-  width: 400px;
+  height: 40px;
+  min-width: 250px;
   cursor: pointer;
   transition: 300ms;
   &:hover {
