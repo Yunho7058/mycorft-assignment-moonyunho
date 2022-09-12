@@ -5,6 +5,12 @@ const Box = styled(G.Box)`
   justify-content: space-around;
   height: 50px;
   width: 400px;
+  cursor: pointer;
+  transition: 300ms;
+  &:hover {
+    transform: scale(1.05);
+    transition: 300ms;
+  }
 `
 
 const ItemBox = ({ id, itemName }: { id: number; itemName: string }) => {

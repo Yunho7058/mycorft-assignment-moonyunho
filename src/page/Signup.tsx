@@ -49,7 +49,6 @@ const Signup = () => {
     }
   }
   const effectiveness = () => {
-    //* ? : 하나 있거나 없거나,  * : 0개 이상 , ^ : 시작한다, + : 1개 이상, $ : 끝, {2,3} : 2글자나 3글자 사이,[] : 대괄호 안에 요소중 하나 , \ 이스케이프(탈출), . : 아무문자, i : 정규표현식 끝나는 곳에 표시, 대소문자 신경 인씀
     const emailReplace =
       /^[0-9a-zA-Z]([-_]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_]?[0-9a-zA-Z])*\.[a-zA-Z]{2,4}$/i
     emailReplace.test(userInfo.email)

@@ -7,5 +7,18 @@ namespace TypeList {
     email: string | boolean
     password: string | boolean
   }
+  export interface Item {
+    id: number
+    itemName: string
+  }
+  export interface Items {
+    totalPages: number
+    currentPage: number
+    content: Item[]
+  }
+  export interface ItemStatus {
+    status: string
+    items: Items
+  }
 }
 export default TypeList
