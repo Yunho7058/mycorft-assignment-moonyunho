@@ -19,6 +19,7 @@ namespace TypeList {
   export interface ItemStatus {
     status: string
     items: Items
+    item: Item | null
   }
 }
 export default TypeList

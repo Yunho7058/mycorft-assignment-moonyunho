@@ -13,9 +13,20 @@ const Box = styled(G.Box)`
   }
 `
 
-const ItemBox = ({ id, itemName }: { id: number; itemName: string }) => {
+const ItemBox = ({
+  id,
+  itemName,
+  handleItemSelect,
+}: {
+  id?: number
+  itemName?: string
+  handleItemSelect?: (id?: number) => void
+}) => {
   return (
-    <Box>
+    <Box
+      onClick={() => {
+        handleItemSelect && handleItemSelect(id)
+      }}>
       <div>No. {id}</div>
       <div>Name : {itemName}</div>
     </Box>
