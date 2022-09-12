@@ -9,12 +9,13 @@ const initialState: TypeList.ItemStatus = {
     currentPage: 0,
     content: [],
   },
+  item: null,
 }
 
-const itemsAPI = createAsyncThunk('itemsAPI', async (page: number) => {
+const itemsAPI = createAsyncThunk('itemsAPI', async (page: string) => {
   try {
     const data = await axios.get(
-      `https://mycroft-test-api.herokuapp.com/order?page=${page}`,
+      `https://mycroft-test-api.herokuapp.com/order${page}`,
       {
         headers: {
           'Content-Type': 'application/json',
@@ -37,7 +38,12 @@ const items = createSlice({
     })
     builder.addCase(itemsAPI.fulfilled, (state, action) => {
       state.status = 'complete'
-      state.items = action.payload
+
+      if (action.payload.totalPages) {
+        state.items = action.payload
+      } else {
+        state.item = action.payload
+      }
     })
     builder.addCase(itemsAPI.rejected, (state, action) => {
       state.status = 'fail'
