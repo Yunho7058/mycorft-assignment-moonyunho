@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import * as G from '../components/Global/GlobalStyle'
 const Box = styled(G.Box)`
+  margin-top: 0px;
   flex-direction: row;
   justify-content: space-around;
   height: 40px;
