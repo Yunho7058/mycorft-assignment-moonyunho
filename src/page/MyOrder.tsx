@@ -9,10 +9,9 @@ import Spinner from '../components/Spinner'
 import { itemsAPI } from '../redux/slice/items'
 import { AppDispatch, RootState } from '../redux/store'
 const Box = styled(G.Box)`
-  margin-top: 70px;
-  height: 580px;
+  height: 540px;
   padding: 10px;
-  row-gap: 10px;
+  row-gap: 5px;
   div {
     display: flex;
     flex-direction: row;
@@ -48,31 +47,31 @@ const MyOrder = () => {
   }
   return (
     <G.Back>
-      <Box>
-        {!isSpinner ? (
+      {!isSpinner ? (
+        <Box>
           <Spinner />
-        ) : (
-          <>
-            {itemsState.content.map((el) => (
-              <ItemBox
-                key={el.id}
-                id={el.id}
-                itemName={el.itemName}
-                handleItemSelect={handleItemSelect}
+        </Box>
+      ) : (
+        <Box>
+          {itemsState.content.map((el) => (
+            <ItemBox
+              key={el.id}
+              id={el.id}
+              itemName={el.itemName}
+              handleItemSelect={handleItemSelect}
+            />
+          ))}
+          <div>
+            {pagesArr.map((_, idx) => (
+              <PaginationBox
+                key={idx}
+                page={idx}
+                handlePaginationClick={handlePaginationClick}
               />
             ))}
-            <div>
-              {pagesArr.map((_, idx) => (
-                <PaginationBox
-                  key={idx}
-                  page={idx}
-                  handlePaginationClick={handlePaginationClick}
-                />
-              ))}
-            </div>
-          </>
-        )}
-      </Box>
+          </div>
+        </Box>
+      )}
     </G.Back>
   )
 }
