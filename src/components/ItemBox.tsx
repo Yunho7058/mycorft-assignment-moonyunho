@@ -4,6 +4,8 @@ const Box = styled(G.Box)`
   flex-direction: row;
   justify-content: space-around;
   height: 40px;
+  font-size: 15px;
+  padding: 5px;
   min-width: 250px;
   cursor: pointer;
   transition: 300ms;

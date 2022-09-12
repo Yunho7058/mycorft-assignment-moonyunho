@@ -35,9 +35,9 @@ export const Back = styled.main`
 `
 
 export const Box = styled.section`
-  width: 30%;
   max-width: 500px;
   min-width: 300px;
+  margin-top: 50px;
   height: 500px;
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 15px;

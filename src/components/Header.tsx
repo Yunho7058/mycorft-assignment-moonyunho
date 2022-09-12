@@ -10,6 +10,7 @@ const Back = styled.header`
   top: 0px;
   left: 0px;
   width: 100%;
+  height: 70px;
   background-color: white;
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -41,7 +42,6 @@ const Header = memo(function () {
   const loginState = useSelector((state: RootState) => state.login)
   const dispatch = useDispatch()
   const navigate = useNavigate()
-  console.log('하이')
   const handlePageMove = (url: string) => {
     navigate(url)
   }
